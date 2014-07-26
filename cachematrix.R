@@ -12,10 +12,10 @@ makeCacheMatrix <- function(x = matrix()) {
     x <<- y               #sets cached matrix to new value
     inv <<- NULL          #sets inv to null since matrix is being set ot new value 
   }
-  get <- function() x
-  setinv <- function(newInv) inv <<- newInv
-  getinv <- function() inv
-  list(set = set, get = get,
+  get <- function() x     #returns cached matrix                        
+  setinv <- function(newInv) inv <<- newInv # sets inverse of matrix
+  getinv <- function() inv                  # gets inverse of matrix
+  list(set = set, get = get,                # creates and returns a list consisting of the getter and setter functions
        setinv = setinv,
        getinv = getinv)
 }
